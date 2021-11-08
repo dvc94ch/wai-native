@@ -1,0 +1,9 @@
+[package]
+name = "bin"
+version = "0.1.0"
+edition = "2021"
+links = "api"
+
+[dependencies]
+async-global-executor = "2.0.2"
+witx-bindgen-rust = { path = "../../witx-bindgen/crates/rust-wasm" }

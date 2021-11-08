@@ -1,0 +1,31 @@
+enum lang {
+    en,
+    de,
+}
+
+type time = tuple<u8, u8, u8>
+type date = tuple<u8, u8, u16>
+
+record datetime {
+    date: date,
+    time: time,
+}
+
+flags mode {
+    friendly,
+    sad,
+    agitated,
+}
+
+variant config {
+  lang(lang),
+  datetime(datetime),
+  mode(mode),
+}
+
+resource greeter {
+    static new: function() -> greeter
+    static with_config: function(config: list<config>) -> option<greeter>
+    greet: function() -> expected<string, string>
+    async_greet: async function() -> string
+}
