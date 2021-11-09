@@ -7,4 +7,4 @@ edition = "2021"
 crate-type = ['cdylib', 'staticlib']
 
 [dependencies]
-witx-bindgen-rust = { path = "../../witx-bindgen/crates/rust-wasm" }
+wai-bindgen-rust = { path = "../../wai-bindgen/crates/rust-wasm" }

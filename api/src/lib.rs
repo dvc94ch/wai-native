@@ -1,6 +1,6 @@
-use witx_bindgen_rust::Handle;
+use wai_bindgen_rust::Handle;
 
-witx_bindgen_rust::export!("api.witx");
+wai_bindgen_rust::export!("api.witx");
 
 pub struct Api {}
 
@@ -26,7 +26,7 @@ impl Default for Greeter {
     }
 }
 
-#[witx_bindgen_rust::async_trait(?Send)]
+#[wai_bindgen_rust::async_trait(?Send)]
 impl api::Greeter for Greeter {
     fn new() -> Handle<Self> {
         Handle::new(Self::default())

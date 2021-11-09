@@ -51,7 +51,7 @@ checksum = "ee10e43ae4a853c0a3591d4e2ada1719e553be18199d9da9d4a83f5927c2f5c7"
 name = "api"
 version = "0.1.0"
 dependencies = [
- "witx-bindgen-rust",
+ "wai-bindgen-rust",
 ]
 
 [[package]]
@@ -876,7 +876,7 @@ name = "native"
 version = "0.1.0"
 dependencies = [
  "async-global-executor",
- "witx-bindgen-rust",
+ "wai-bindgen-rust",
 ]
 
 [[package]]
@@ -1407,6 +1407,87 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "5fecdca9a5291cc2b8dcf7dc02453fee791a280f3743cb0905f8822ae463b3fe"
 
 [[package]]
+name = "wai-bindgen-gen-core"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "wai-parser",
+]
+
+[[package]]
+name = "wai-bindgen-gen-rust"
+version = "0.1.0"
+dependencies = [
+ "heck",
+ "wai-bindgen-gen-core",
+]
+
+[[package]]
+name = "wai-bindgen-gen-rust-wasm"
+version = "0.1.0"
+dependencies = [
+ "heck",
+ "wai-bindgen-gen-core",
+ "wai-bindgen-gen-rust",
+]
+
+[[package]]
+name = "wai-bindgen-gen-wasmtime"
+version = "0.1.0"
+dependencies = [
+ "heck",
+ "wai-bindgen-gen-core",
+ "wai-bindgen-gen-rust",
+]
+
+[[package]]
+name = "wai-bindgen-rust"
+version = "0.1.0"
+dependencies = [
+ "async-trait",
+ "wai-bindgen-rust-impl",
+]
+
+[[package]]
+name = "wai-bindgen-rust-impl"
+version = "0.1.0"
+dependencies = [
+ "proc-macro2",
+ "syn",
+ "wai-bindgen-gen-core",
+ "wai-bindgen-gen-rust-wasm",
+]
+
+[[package]]
+name = "wai-bindgen-wasmtime"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "bitflags",
+ "thiserror",
+ "wai-bindgen-wasmtime-impl",
+ "wasmtime",
+]
+
+[[package]]
+name = "wai-bindgen-wasmtime-impl"
+version = "0.1.0"
+dependencies = [
+ "proc-macro2",
+ "syn",
+ "wai-bindgen-gen-core",
+ "wai-bindgen-gen-wasmtime",
+]
+
+[[package]]
+name = "wai-parser"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "id-arena",
+]
+
+[[package]]
 name = "waker-fn"
 version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1464,9 +1545,9 @@ name = "wasm"
 version = "0.1.0"
 dependencies = [
  "anyhow",
+ "wai-bindgen-wasmtime",
  "wasmtime",
  "wasmtime-wasi",
- "witx-bindgen-wasmtime",
 ]
 
 [[package]]
@@ -1789,87 +1870,6 @@ dependencies = [
  "log",
  "thiserror",
  "wast 35.0.2",
-]
-
-[[package]]
-name = "witx-bindgen-gen-core"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "witx2",
-]
-
-[[package]]
-name = "witx-bindgen-gen-rust"
-version = "0.1.0"
-dependencies = [
- "heck",
- "witx-bindgen-gen-core",
-]
-
-[[package]]
-name = "witx-bindgen-gen-rust-wasm"
-version = "0.1.0"
-dependencies = [
- "heck",
- "witx-bindgen-gen-core",
- "witx-bindgen-gen-rust",
-]
-
-[[package]]
-name = "witx-bindgen-gen-wasmtime"
-version = "0.1.0"
-dependencies = [
- "heck",
- "witx-bindgen-gen-core",
- "witx-bindgen-gen-rust",
-]
-
-[[package]]
-name = "witx-bindgen-rust"
-version = "0.1.0"
-dependencies = [
- "async-trait",
- "witx-bindgen-rust-impl",
-]
-
-[[package]]
-name = "witx-bindgen-rust-impl"
-version = "0.1.0"
-dependencies = [
- "proc-macro2",
- "syn",
- "witx-bindgen-gen-core",
- "witx-bindgen-gen-rust-wasm",
-]
-
-[[package]]
-name = "witx-bindgen-wasmtime"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "bitflags",
- "thiserror",
- "wasmtime",
- "witx-bindgen-wasmtime-impl",
-]
-
-[[package]]
-name = "witx-bindgen-wasmtime-impl"
-version = "0.1.0"
-dependencies = [
- "proc-macro2",
- "syn",
- "witx-bindgen-gen-core",
- "witx-bindgen-gen-wasmtime",
-]
-
-[[package]]
-name = "witx2"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "id-arena",
 ]
 
 [[package]]

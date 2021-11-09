@@ -7,4 +7,4 @@ edition = "2021"
 anyhow = "1.0.45"
 wasmtime = "0.30.0"
 wasmtime-wasi = "0.30.0"
-witx-bindgen-wasmtime = { path = "../../witx-bindgen/crates/wasmtime" }
+wai-bindgen-wasmtime = { path = "../../wai-bindgen/crates/wasmtime" }

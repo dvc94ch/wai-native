@@ -6,4 +6,4 @@ links = "api"
 
 [dependencies]
 async-global-executor = "2.0.2"
-witx-bindgen-rust = { path = "../../witx-bindgen/crates/rust-wasm" }
+wai-bindgen-rust = { path = "../../wai-bindgen/crates/rust-wasm" }

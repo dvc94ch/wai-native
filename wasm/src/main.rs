@@ -3,7 +3,7 @@ use wasmtime::*;
 use wasmtime_wasi::sync::WasiCtxBuilder;
 use wasmtime_wasi::WasiCtx;
 
-witx_bindgen_wasmtime::import!("api.witx");
+wai_bindgen_wasmtime::import!("api.witx");
 
 struct State {
     wasi: WasiCtx,

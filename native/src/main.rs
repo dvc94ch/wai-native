@@ -1,4 +1,4 @@
-witx_bindgen_rust::import!("api.witx");
+wai_bindgen_rust::import!("api.witx");
 
 fn main() {
     use api::*;
