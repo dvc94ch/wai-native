@@ -56,7 +56,10 @@ impl api::Greeter for Greeter {
         if let Some(datetime) = self.datetime {
             let (day, month, year) = datetime.date;
             let (hour, min, sec) = datetime.time;
-            greeting.push_str(&format!(" {}.{}.{} {}:{}:{}", day, month, year, hour, min, sec));
+            greeting.push_str(&format!(
+                " {}.{}.{} {}:{}:{}",
+                day, month, year, hour, min, sec
+            ));
         }
         if self.agitated {
             greeting.push('!');
@@ -70,7 +73,7 @@ impl api::Greeter for Greeter {
         Ok(greeting)
     }
 
-    async fn async_greet(&self) -> String {
+    /*async fn async_greet(&self) -> String {
         self.greet().unwrap()
-    }
+    }*/
 }

@@ -9,7 +9,8 @@ fn main() {
             time: (0, 12, 33),
         }),
         Config::Mode(MODE_FRIENDLY | MODE_AGITATED),
-    ]).unwrap();
+    ])
+    .unwrap();
     println!("sync greet: {}", handle.greet().unwrap());
-    println!("async greet: {}", async_global_executor::block_on(handle.async_greet()));
+    //println!("async greet: {}", async_global_executor::block_on(handle.async_greet()));
 }

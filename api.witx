@@ -18,14 +18,14 @@ flags mode {
 }
 
 variant config {
-  lang(lang),
-  datetime(datetime),
-  mode(mode),
+    lang(lang),
+    datetime(datetime),
+    mode(mode),
 }
 
 resource greeter {
     static new: function() -> greeter
     static with_config: function(config: list<config>) -> option<greeter>
     greet: function() -> expected<string, string>
-    async_greet: async function() -> string
+    //async_greet: async function() -> string
 }
