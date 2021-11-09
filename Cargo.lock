@@ -872,7 +872,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0debeb9fcf88823ea64d64e4a815ab1643f33127d995978e099942ce38f25238"
 
 [[package]]
-name = "natime"
+name = "native"
 version = "0.1.0"
 dependencies = [
  "async-global-executor",
