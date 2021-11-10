@@ -77,3 +77,24 @@ impl api::Greeter for Greeter {
         self.greet().unwrap()
     }*/
 }
+
+#[cfg(test)]
+mod tests {
+    wai_bindgen_rust::import!("api.witx");
+
+    #[test]
+    fn test_greeter() {
+        use api::*;
+        let handle = Greeter::with_config(&[
+            Config::Lang(Lang::En),
+            Config::Datetime(Datetime {
+                date: (9, 11, 2021),
+                time: (0, 12, 33),
+            }),
+            Config::Mode(MODE_FRIENDLY | MODE_AGITATED),
+        ])
+        .unwrap();
+        let greeting = handle.greet().unwrap();
+        assert_eq!(greeting, "hello world 9.11.2021 0:12:33! :)");
+    }
+}
